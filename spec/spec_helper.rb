@@ -1,5 +1,12 @@
+ENV['RACK_ENV'] = 'test'
+
+require File.join(File.dirname(__FILE__), '..', 'app/bookmark_manager.rb')
+
+require 'capybara'
+require 'rspec'
 require 'capybara/rspec'
 
+Capybara.app = BookmarkManager
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
